@@ -1,0 +1,62 @@
+1. BMI Calculation
+Formula:
+BMI
+=
+weight (kg)
+height (m)
+2
+BMI= 
+height (m) 
+2
+ 
+weight (kg)
+​
+ 
+2. Weekly and Monthly Summation and Averages
+Weekly data updates:
+
+New values are added to a List, and old values are removed if the list exceeds the set limit (7 for weekly data).
+For monthly averages, approximate values are calculated by summing weekly totals and multiplying by 4.
+Example for Monthly Average (Approximation):
+
+Monthly Average for Steps
+=
+(
+Sum of Weekly Steps
+)
+×
+4
+Monthly Average for Steps=(Sum of Weekly Steps)×4
+3. Status Calculation Rules
+For different health aspects, predefined thresholds are used:
+
+Steps:
+
+Good: steps >= 10,000
+Needs Improvement: steps < 10,000
+Calories:
+
+Good: calories <= 2,000
+High: calories > 2,000
+Sleep Hours:
+
+Good: sleepHours >= 7
+Needs Improvement: sleepHours < 7
+Water Intake:
+
+Good: waterIntake >= 8
+Needs Improvement: waterIntake < 8
+4. Feedback Rules
+For feedback generation:
+
+Steps: Suggest improvement if < 10,000.
+Calories: Suggest reduction if > 2,000.
+Sleep: Suggest improvement if < 7 hours.
+Water Intake: Suggest increasing if < 8 glasses.
+5. Stream Summation for Weekly and Monthly Data
+Formula for summation of weekly data:
+Total Weekly Steps
+=
+weeklySteps.stream().mapToInt(Integer::intValue).sum()
+Total Weekly Steps=weeklySteps.stream().mapToInt(Integer::intValue).sum()
+Similarly, summation is performed for calories, sleep, and water intake using corresponding streams.
